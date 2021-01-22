@@ -1,0 +1,31 @@
+@using Microsoft.AspNetCore.Identity
+@using BlogTemplate._1.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item me-2">
+    <a class="nav-link" asp-page="/New">New Post</a>
+    </li>
+    <li class="nav-item me-2">
+     <a class="nav-link" asp-page="/Drafts">Drafts</a>
+    </li>
+    <li class="nav-item me-2">
+     <a class="nav-link" asp-page="/Trash">Trash</a>
+    </li>
+    <li class="nav-item me-2">
+    <a class="nav-link " asp-page="/Account/Manage/Index">Owner Settings</a>
+    </li>
+    <li class="nav-item mt-3 mt-lg-0">
+        <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm">
+            <button type="submit" class="btn bg-primary w-100 text-white px-3 rounded-0 shadow-sm"><i class="fas fa-power-off me-1"></i> Sign out</button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item mt-3 mt-lg-0">
+    <a class="nav-link bg-primary btn text-white px-3 rounded-0 shadow-sm" asp-page="/Account/Login"><i class="fas fa-sign-in-alt me-1"></i> Sign in</a>
+    </li>
+}

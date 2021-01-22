@@ -1,0 +1,91 @@
+@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>You are already logged in.</p>
+}
+else
+{
+    @*<h2>@ViewData["Title"]</h2>*@
+    <!--log in form-->
+    <section id="form" class="bg-white">
+        <div class="container py-5">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-6">
+                    <img src="~/img/undraw_Hello_qnas.svg" class="img-fluid p-4" />
+                </div>
+                <div class="col-4">
+                    <form method="post">
+                        <h3 class="m-0">Welcome Back!</h3>
+                        <p class="text-muted m-0">Log in to continue</p>
+                        <div asp-validation-summary="All"></div>
+                        <div class="form-group">
+                            <div class="mb-3">
+                                <label asp-for="Input.Email" class="form-label">Username</label>
+                                <input asp-for="Input.Email" class="form-control rounded-0 border-2 border-dark" aria-describedby="emailHelp" placeholder="User@gmail.com" />
+                                <span asp-validation-for="Input.Email"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Input.Password" class="form-label"></label>
+                                <input asp-for="Input.Password" class="form-control rounded-0 border-2 border-dark" placeholder="Password" />
+                                <span asp-validation-for="Input.Password"></span>
+                            </div>
+                            <div class="checkbox mb-3">
+                                <label asp-for="Input.RememberMe" class="form-check-label">
+                                    <input asp-for="Input.RememberMe" />
+                                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                </label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn bg-primary text-white mb-3 rounded-0 shadow-sm">Sign in</button>
+                            </div>
+                            <p>
+                                <a asp-page="./ForgotPassword" class="text-decoration-none">Forgot your password?</a>
+                            </p>
+                            @if (Model.NoIdentitiesExist)
+                            {
+                                <p>
+                                    <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                                </p>
+                            }
+                        </div>
+                    </form>
+                </div>
+                @{
+                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                    {
+                        <div>
+                            @*<p>
+                        There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                        for details on setting up this ASP.NET application to support logging in via external services.
+                    </p>*@
+                        </div>
+                    }
+                    else
+                    {
+                        <form asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                            <div>
+                                <p>
+                                    @foreach (var provider in Model.ExternalLogins)
+                                    {
+                                        <button type="submit" class="btn bg-primary text-white rounded-0 shadow-sm" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                    }
+                                </p>
+                            </div>
+                        </form>
+                    }
+                }
+            </div>
+        </div>
+    </section>
+    <!--/log in form-->
+}
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

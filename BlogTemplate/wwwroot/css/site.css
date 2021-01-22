@@ -1,0 +1,51 @@
+/*====================================*/
+    /*  Bootstrap override classes */
+/*====================================*/
+    /*  primary color override   */
+.bg-primary {
+background-color: #307fc1 !important;
+}
+.text-primary {
+color: #307fc1 !important;
+}
+.border-primary{
+border-color:#307fc1 !important;
+}
+/*====================================*/
+   /*  My blog common classes*/
+/*====================================*/
+.navbar-toggler:focus{
+box-shadow:none!important;
+}
+.btn:focus {
+box-shadow : none !important;    
+}
+input:focus{
+box-shadow:none !important;
+}
+/*====================================*/
+    /*My blog custom-common classes*/
+/*====================================*/
+/*==========header section============*/
+/*#nav-bar .hovrcenter {
+position: relative;
+}
+#nav-bar .hovrcenter:before {
+content: "";
+position: absolute;
+left: 50%;
+right: 50%;
+bottom: 0;
+background: #ECF0F1;
+height: 2px;
+transition-property: left, right;
+transition-duration: 0.3s;
+transition-timing-function: ease-out;
+}
+#nav-bar .hovrcenter:hover:before{
+left: 0;
+right: 0;
+}*/
+#nav-bar .navbar-toggler{
+border:2px solid;
+}
