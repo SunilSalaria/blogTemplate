@@ -1,36 +1,59 @@
 @page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Welcome";
 }
-
-<h2>@ViewData["Title"]</h2>
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+@*Register form*@
+<section id="register" class="bg-white">
+    <div class="container py-3">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 d-none d-md-block">
+                <img src="~/img/undraw_fill_forms_yltj.svg" class="img-fluid" />
             </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            <div class="col-md-5 col-lg-4 offset-md-1 col-xs-12">
+                <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <h3 class="m-0">@ViewData["Title"]</h3>
+                    <p class="text-muted m-0">Create your account</p>
+                    @*<div asp-validation-summary="All" class="text-danger"></div>*@
+                    @* user id creater form *@
+                    <div class="form-group mt-5">
+                        <div class="mb-3">
+                            <label asp-for="Input.Email" class="form-label"></label>
+                            <input asp-for="Input.Email" class="form-control rounded-0 border-2 border-dark" aria-describedby="emailHelp" placeholder="Example@gmail.com" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Input.Password" class="form-label"></label>
+                            <input asp-for="Input.Password" class="form-control rounded-0 border-2 border-dark" placeholder="*********" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Input.ConfirmPassword" class="form-label"></label>
+                            <input asp-for="Input.ConfirmPassword" class="form-control rounded-0 border-2 border-dark" placeholder="*********" />
+                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn bg-primary py-2 text-white mb-3 rounded-0 shadow-sm">Register</button>
+                    </div>
+                    @*social icons*@
+                    <div class="text-center mb-3 text-muted">or using</div>
+                    <div class="text-center mb-3">
+                        <a href="#"><i class="fab fa-facebook-f social-icon text-white"></i></a>
+                        <a href="#"><i class="fab fa-google social-icon text-white"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in text-white social-icon"></i></a>
+                    </div>
+                    @*/social icons*@
+                    <p class="text-center mb-3">
+                        <a asp-page="./Login" class="text-decoration-none text-primary" asp-route-returnUrl="@Model.ReturnUrl"> Already have an account? <span class="fw-bold">Sign in</span></a>
+                    </p>
+                </form>
+                @* /user id creater form *@
             </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-                <button type="submit" class="btn btn-default">Register</button>
-        </form>
+        </div>
     </div>
-</div>
+</section>
+@*/Register form*@
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }
