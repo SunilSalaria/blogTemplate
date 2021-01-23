@@ -10,8 +10,7 @@
     <p>You are already logged in.</p>
 }
 else
-{
-    @*<h2>@ViewData["Title"]</h2>*@
+{    
     <!--log in form-->
     <section id="form" class="bg-white">
         <div class="container py-3">
@@ -45,17 +44,15 @@ else
                         <div class="d-grid">
                             <button type="submit" class="btn bg-primary py-2 text-white mb-3 rounded-0 shadow-sm"><i class="fas fa-sign-in-alt me-2"></i>Sign in</button>
                         </div>
-                        <div class="text-center">
+                        <p class="text-center mb-3">
+                            <a asp-page="./Register" class="text-decoration-none text-primary" asp-route-returnUrl="@Model.ReturnUrl"> Don't have account? <span class="fw-bold">Sign up</span></a>
+                        </p>
+                        <div class="text-center mb-3">
                             <a href="#"><i class="fab fa-facebook-f social-icon text-white"></i></a>
                             <a href="#"><i class="fab fa-instagram social-icon text-white "></i></a>
                             <a href="#"><i class="fab fa-twitter social-icon text-white"></i></a>
                         </div>
-                        @if (Model.NoIdentitiesExist)
-                        {
-                            <p>
-                                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
-                            </p>
-                        }
+                        
                     </div>
             </form>
         </div>
