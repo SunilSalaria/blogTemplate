@@ -49,3 +49,23 @@ right: 0;
 #nav-bar .navbar-toggler{
 border:2px solid;
 }
+/*==========Login Page============*/
+#form .form-control:focus{
+border-color:#307fc1 !important;
+}
+#form .social-icon {
+height: 33px;
+width: 33px;
+line-height: 33px;
+transition-duration: 1s;
+background: #2874ba;
+margin: 0.25rem;
+box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.075);
+border-radius: 50%;
+}
+#form .social-icon:hover {
+transform: rotate(360deg);
+box-shadow: 0 0 0 3px #2874ba;
+background: white;
+color: #307fc1 !important;
+}
