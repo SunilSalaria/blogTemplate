@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Welcome Back!";
+    //Layout = null;
 }
 
 @if (User.Identity.IsAuthenticated)
@@ -10,7 +11,10 @@
     <p>You are already logged in.</p>
 }
 else
-{    
+{
+
+    <!--bootstrap 5 bta css-->
+    <link rel="stylesheet" href="~/css/site.min.css" />
     <!--log in form-->
     <section id="form" class="bg-white">
         <div class="container py-3">
@@ -19,55 +23,55 @@ else
                     <img src="~/img/undraw_Hello_qnas.svg" class="img-fluid p-3" />
                 </div>
                 <div class="col-md-5 col-lg-4 offset-md-1 col-xs-12">
-                    @*form*@ 
+                    @*form*@
                     <form method="post">
                         <h3 class="m-0">@ViewData["Title"]</h3>
                         <p class="text-muted m-0">Log in to continue</p>
                         @*<div asp-validation-summary="All"></div>*@
-                    <div class="form-group mt-5">
-                        <div class="mb-3">
-                            <label asp-for="Input.Email" class="form-label"></label>
-                            <input asp-for="Input.Email" class="form-control rounded-0 border-2 border-dark" aria-describedby="emailHelp" placeholder="Example@gmail.com" />
-                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        <div class="form-group mt-5">
+                            <div class="mb-3">
+                                <label asp-for="Input.Email" class="form-label"></label>
+                                <input asp-for="Input.Email" class="form-control rounded-0 border-2 border-dark" aria-describedby="emailHelp" placeholder="Example@gmail.com" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <label asp-for="Input.Password" class="form-label"></label>
+                                <span><a asp-page="./ForgotPassword" class="float-end text-decoration-none text-primary">Forgot password?</a></span>
+                                <input asp-for="Input.Password" class="form-control rounded-0 border-2 border-dark" placeholder="*********" />
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+                            <div class="checkbox mb-3">
+                                <label asp-for="Input.RememberMe" class="form-check-label">
+                                    <input asp-for="Input.RememberMe" />
+                                    <span class="ms-1">@Html.DisplayNameFor(m => m.Input.RememberMe)</span>
+                                </label>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn bg-primary py-2 text-white mb-3 rounded-0 shadow-sm"><i class="fas fa-sign-in-alt me-2"></i>Sign in</button>
+                            </div>
+                            <p class="text-center mb-3">
+                                <a asp-page="./Register" class="text-decoration-none text-primary" asp-route-returnUrl="@Model.ReturnUrl"> Don't have account? <span class="fw-bold">Sign up</span></a>
+                            </p>
+                            @*social icons*@
+                            <div class="text-center mb-3">
+                                <a href="#"><i class="fab fa-facebook-f social-icon text-white"></i></a>
+                                <a href="#"><i class="fab fa-instagram social-icon text-white "></i></a>
+                                <a href="#"><i class="fab fa-twitter social-icon text-white"></i></a>
+                            </div>
+                            @*/social icons*@
                         </div>
-                        <div class="mb-3">
-                            <label asp-for="Input.Password" class="form-label"></label>
-                            <span><a asp-page="./ForgotPassword" class="float-end text-decoration-none text-primary">Forgot password?</a></span>
-                            <input asp-for="Input.Password" class="form-control rounded-0 border-2 border-dark" placeholder="*********" />
-                            <span asp-validation-for="Input.Password" class="text-danger"></span>
-                        </div>
-                        <div class="checkbox mb-3">
-                            <label asp-for="Input.RememberMe" class="form-check-label">
-                                <input asp-for="Input.RememberMe" />
-                                <span class="ms-1">@Html.DisplayNameFor(m => m.Input.RememberMe)</span>
-                            </label>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn bg-primary py-2 text-white mb-3 rounded-0 shadow-sm"><i class="fas fa-sign-in-alt me-2"></i>Sign in</button>
-                        </div>
-                        <p class="text-center mb-3">
-                            <a asp-page="./Register" class="text-decoration-none text-primary" asp-route-returnUrl="@Model.ReturnUrl"> Don't have account? <span class="fw-bold">Sign up</span></a>
-                        </p>
-                        @*social icons*@
-                        <div class="text-center mb-3">
-                            <a href="#"><i class="fab fa-facebook-f social-icon text-white"></i></a>
-                            <a href="#"><i class="fab fa-instagram social-icon text-white "></i></a>
-                            <a href="#"><i class="fab fa-twitter social-icon text-white"></i></a>
-                        </div>
-                        @*/social icons*@
-                    </div>
-            </form>
+                    </form>
                     @*/form*@
-        </div>
-        @{
-            if ((Model.ExternalLogins?.Count ?? 0) == 0)
-            {
-                @*<div>
-                   <p>
-                There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
-                for details on setting up this ASP.NET application to support logging in via external services.
-            </p>
-</div>*@
+                </div>
+                @{
+                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                    {
+                        @*<div>
+                                               <p>
+                                            There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                                            for details on setting up this ASP.NET application to support logging in via external services.
+                                        </p>
+                            </div>*@
                     }
                     else
                     {
@@ -87,8 +91,11 @@ else
         </div>
     </section>
     <!--/log in form-->
-}
 
+}
+<environment include="Development">
+    <script src="~/js/site.min.js"></script>
+</environment>
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }
