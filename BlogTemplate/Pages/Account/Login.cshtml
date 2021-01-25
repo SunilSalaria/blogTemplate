@@ -3,11 +3,7 @@
 
 @{
     ViewData["Title"] = "Welcome Back!";
-<<<<<<< HEAD
     Layout = "_Layout-login";
-=======
-    Layout = null;
->>>>>>> c4755f7133a1d6350d47ac82390a43546403b1da
 }
 
 @if (User.Identity.IsAuthenticated)
@@ -17,8 +13,8 @@
 else
 {
     <!--log in form-->
-    <section id="form" class="bg-white">
-        <div class="container py-3">
+    <section id="form">
+        <div class="container py-3 py-lg-5">
             <div class="row justify-content-center align-items-center">
                 <div class="col-md-6 d-none d-md-block">
                     <img src="~/img/undraw_Hello_qnas.svg" class="img-fluid p-3" />
