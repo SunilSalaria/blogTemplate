@@ -1,3 +1,7 @@
+                                                                                                 BLOG  TEMPLATE
+User/Password :- admin@gmail.com/Admin@4321
+
+*********************
 Project Name :- Blog_Template.
 
 *********************

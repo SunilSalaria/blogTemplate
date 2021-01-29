@@ -91,3 +91,15 @@ box-shadow: 0 0 0 3px #2874ba;
 background: white;
 color: #307fc1 !important;
 }
+/*==========index Page============*/
+#blog-cards .card .card-detail {
+position: absolute !important;
+top: 0;
+transform: translateY(-50%);
+background:white;
+border-radius: 13px;
+font-size: 13px;
+padding: 4px 8px;
+font-weight:600;
+letter-spacing:1px;
+}
