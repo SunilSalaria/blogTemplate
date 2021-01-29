@@ -1,6 +1,15 @@
-Project Name :-  My Blog.
-Framework :-  Bootstrap
-Color : - Primary(#307fc1) 
-Icons :- Fontawesome
+Project Name :- Blog_Template.
 
-Thank you
+*********************
+
+Framework :-  Bootstrap_beta5.
+
+*********************
+
+Color : - Primary(#307fc1). 
+
+*********************
+
+Icons :- Fontawesome_5.
+
+*********************
