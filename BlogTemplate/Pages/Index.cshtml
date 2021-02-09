@@ -10,7 +10,7 @@
             <div class="container py-5">
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="m-0 mb-3">Welcome!</h1>
+                        <h3 class="m-0 mb-3">Welcome!</h3>
                         <p class="m-0 mb-3">Get started and write your first blog post <a class="text-primary" asp-page="/New">here</a>.</p>
                         <p class="m-0 mb-3">Happy blogging!</p>
                     </div>
@@ -19,37 +19,31 @@
         </section>
         @*index without post*@
     }
-
     else
     {
-
-
-        foreach (var post in Model.PostSummaries)
-        {
-            @*index without post*@
-            <section id="blog-cards">
-                <div class="container py-5">
-                    <div class="row">
-
-                        <article>
-                            <div class="col-3">
-                                <div class="card border-0 shadow">
-                                    <img src="https://images.ctfassets.net/2d5q1td6cyxq/6AwFCHfopyKVcOKDYEsdIo/430d5439d881053b420bd38d24f1f656/Squarecheckout.jpg?w=319&h=179&fm=webp&q=85&fit=thumb" class="card-img-top" alt="...">
-                                    <div class="card-body position-relative">
-                                        <span class="card-detail text-uppercase position-absolute shadow">Articles</span>
-                                        <h3 class="m-0 my-3"><a class="text-primary text-decoration-none" asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">@post.Title</a></h3>
-                                        <p class="lead m-0 mb-3">@post.Excerpt</p>
-                                        <div class="float-end text-muted">@post.PublishTime.ToString("MMM dd, yyyy")</div>
-                                        <div><a asp-page="/post" class="text-decoration-none" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug"><i class="far fa-comment-dots me-1"></i> @post.CommentCount</a></div>
-                                    </div>
+        @*index with post*@
+        <section id="blog-cards" class="mt-5">
+            <div class="container">
+                <div class="row">
+                    @foreach (var post in Model.PostSummaries)
+                    {
+                        <div class="col-4 mb-4">
+                            <div class="card border-0 card-shadow">
+                                <img src="https://images.ctfassets.net/2d5q1td6cyxq/6AwFCHfopyKVcOKDYEsdIo/430d5439d881053b420bd38d24f1f656/Squarecheckout.jpg?w=319&h=179&fm=webp&q=85&fit=thumb" class="card-img-top" alt="loading">
+                                <div class="card-body position-relative">
+                                    <span class="card-detail text-uppercase position-absolute shadow">Articles</span>
+                                    <h5 class="m-0 my-3"><a class="text-dark text-decoration-none" asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">@post.Title</a></h5>
+                                    <p class="m-0 mb-3">@post.Excerpt</p>
+                                    <div class="float-end text-muted">@post.PublishTime.ToString("MMM dd, yyyy")</div>
+                                    <div><a asp-page="/post" class="text-decoration-none" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug"><i class="far fa-comment-dots me-1"></i> @post.CommentCount</a></div>
                                 </div>
                             </div>
-                        </article>
-                    </div>
+                        </div>
+                    }
                 </div>
-            </section>
-            @*index without post*@
-
-        }
+            </div>
+        </section>
+        @*index with post*@
     }
 }
+

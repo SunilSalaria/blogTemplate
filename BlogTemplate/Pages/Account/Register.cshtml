@@ -23,14 +23,14 @@
                             <input asp-for="Input.Email" class="form-control rounded-0 border-2 border-dark" aria-describedby="emailHelp" placeholder="Example@gmail.com" />
                             <span asp-validation-for="Input.Email" class="text-danger"></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 position-relative">
                             <label asp-for="Input.Password" class="form-label"></label>
-                            <input asp-for="Input.Password" class="form-control rounded-0 border-2 border-dark" placeholder="*********" />
+                            <input asp-for="Input.Password" class="form-control password rounded-0 border-2 border-dark" placeholder="*********"/><i class="far fa-eye" id="eye"></i>
                             <span asp-validation-for="Input.Password" class="text-danger"></span>
                         </div>
-                        <div class="mb-3">
+                        <div class="mb-3 position-relative">
                             <label asp-for="Input.ConfirmPassword" class="form-label"></label>
-                            <input asp-for="Input.ConfirmPassword" class="form-control rounded-0 border-2 border-dark" placeholder="*********" />
+                            <input asp-for="Input.ConfirmPassword" class="form-control password rounded-0 border-2 border-dark" placeholder="*********"/><i class="far fa-eye" id="eye"></i>
                             <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                         </div>
                     </div>

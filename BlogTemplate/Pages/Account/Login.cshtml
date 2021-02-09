@@ -31,10 +31,10 @@ else
                                 <input asp-for="Input.Email" class="form-control rounded-0 border-2 border-dark" aria-describedby="emailHelp" placeholder="Example@gmail.com" />
                                 <span asp-validation-for="Input.Email" class="text-danger"></span>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3 position-relative">
                                 <label asp-for="Input.Password" class="form-label"></label>
                                 <span><a asp-page="./ForgotPassword" class="float-end text-decoration-none text-primary">Forgot password?</a></span>
-                                <input asp-for="Input.Password" class="form-control rounded-0 border-2 border-dark" placeholder="*********" />
+                                <input asp-for="Input.Password" class="form-control password rounded-0 border-2 border-dark" placeholder="*********" /><i class="far fa-eye" id="eye"></i>
                                 <span asp-validation-for="Input.Password" class="text-danger"></span>
                             </div>
                             <div class="checkbox mb-3">

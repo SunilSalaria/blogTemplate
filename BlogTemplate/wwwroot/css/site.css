@@ -11,8 +11,9 @@ color: #307fc1 !important;
 .border-primary{
 border-color:#307fc1 !important;
 }
+
 /*====================================*/
-   /*  My blog common classes*/
+   /*  common classes*/
 /*====================================*/
 .navbar-toggler:focus{
 box-shadow:none!important;
@@ -31,32 +32,26 @@ font-weight:500;
 text-transform:uppercase;
 letter-spacing:0.5px;
 }
+.card{
+min-height:100%;
+}
+.fa-eye, .fa-eye-slash {
+position: absolute;
+right: 15px;
+top: 40px;
+padding: 4px 0px;
+}
+.card-shadow {
+box-shadow: 0 2px 10px rgb(0 0 0 / 16%);
+}
 /*====================================*/
-    /*My blog custom-common classes*/
+   /* custom-common classes by section */
 /*====================================*/
 /*==========header section============*/
-/*#nav-bar .hovrcenter {
-position: relative;
-}
-#nav-bar .hovrcenter:before {
-content: "";
-position: absolute;
-left: 50%;
-right: 50%;
-bottom: 0;
-background: #ECF0F1;
-height: 2px;
-transition-property: left, right;
-transition-duration: 0.3s;
-transition-timing-function: ease-out;
-}
-#nav-bar .hovrcenter:hover:before{
-left: 0;
-right: 0;
-}*/
 #nav-bar .navbar-toggler{
 border:2px solid;
 }
+
 /*==========Login Page============*/
 #form .social-icon {
 height: 33px;
@@ -74,6 +69,7 @@ box-shadow: 0 0 0 3px #2874ba;
 background: white;
 color: #307fc1 !important;
 }
+
 /*==========Register Page============*/
 #register .social-icon {
 height: 33px;
