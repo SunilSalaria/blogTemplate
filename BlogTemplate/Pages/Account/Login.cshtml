@@ -22,7 +22,7 @@ else
                 <div class="col-md-5 col-lg-4 offset-md-1 col-xs-12">
                     @*form*@
                     <form method="post">
-                        <h3 class="m-0">@ViewData["Title"]</h3>
+                        <h3 class="m-0 text-primary">@ViewData["Title"]</h3>
                         <p class="text-muted m-0">Log in to continue</p>
                         @*<div asp-validation-summary="All"></div>*@
                         <div class="form-group mt-5">
@@ -34,7 +34,8 @@ else
                             <div class="mb-3 position-relative">
                                 <label asp-for="Input.Password" class="form-label"></label>
                                 <span><a asp-page="./ForgotPassword" class="float-end text-decoration-none text-primary">Forgot password?</a></span>
-                                <input asp-for="Input.Password" class="form-control password rounded-0 border-2 border-dark" placeholder="*********" /><i class="far fa-eye" id="eye"></i>
+                                <input asp-for="Input.Password" class="form-control password rounded-0 border-2 border-dark" placeholder="*********" />
+                                <img src="~/img/password-eye-icon-8.png" class="hide-show-password-icon" alt="Alternate Text" />
                                 <span asp-validation-for="Input.Password" class="text-danger"></span>
                             </div>
                             <div class="checkbox mb-3">
