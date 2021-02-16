@@ -2,10 +2,36 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home Page";
+    <!-- background image-->
 
+<section id="background-content">
+    <div class="overflow-hidden bg-img">
+        <div class="container position-relative py-5">
+            <div class="row mt-3 align-items-center">
+                <div class="col-xs-12 col-lg-6" style="z-index:1;">
+                    <h1 class="text-white text-center size-h1 m-0 mb-4">Where the world builds software</h1>
+                    <p class="text-muted text-center size-paragraph m-0 mb-4">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                    </p>
+                    <div class="text-center mb-4 mb-lg-0">
+                        <button class="btn bg-primary me-3 px-3 rounded-0 shadow-sm btn-style"> <a href="#" class="text-white text-decoration-none"><i class="fas fa-check-circle me-1"></i> Sign up</a></button>
+                        <button class="btn bg-primary px-3 rounded-0 shadow-sm btn-style"> <a href="#" class="text-white text-decoration-none"><i class="fas fa-sign-in-alt me-1"></i> Sign in</a></button>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-lg-6 d-flex justify-content-center justify-content-lg-start">
+                    <img src="./img/globe-700.jpg" class="img-fluid" />
+                </div>
+            </div>
+            <img src="~/img/hero-glow.svg" class="svg-style" />
+        </div>
+    </div>
+</section>
+
+    <!-- background image-->
     if (!Model.PostSummaries.Any())
     {
-        @*index without post*@
+        <!--index without post-->
         <section>
             <div class="container py-5">
                 <div class="row">
@@ -17,11 +43,11 @@
                 </div>
             </div>
         </section>
-        @*index without post*@
+        <!--/index without post-->
     }
     else
     {
-        @*index with post*@
+        <!--index with post-->
         <section id="blog-cards" class="mt-5">
             <div class="container">
                 <div class="row">
@@ -30,8 +56,8 @@
                         <div class="col-lg-4 col-md-6 col-12 mb-4">
                             <div class="card border-0 card-shadow">
                                 <a class="text-dark text-decoration-none" asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">
-                                    <img title="More" src="https://images.ctfassets.net/2d5q1td6cyxq/6AwFCHfopyKVcOKDYEsdIo/430d5439d881053b420bd38d24f1f656/Squarecheckout.jpg?w=319&h=179&fm=webp&q=85&fit=thumb" class="card-img-top img-thumbnail" alt="loading">
-                                </a>                               
+                                    <img title="Read more..." src="https://images.ctfassets.net/2d5q1td6cyxq/6AwFCHfopyKVcOKDYEsdIo/430d5439d881053b420bd38d24f1f656/Squarecheckout.jpg?w=319&h=179&fm=webp&q=85&fit=thumb" class="card-img-top img-thumbnail" alt="loading">
+                                </a>
                                 <div class="card-body position-relative">
                                     <span class="card-detail text-uppercase position-absolute shadow">Articles</span>
                                     <h5 class="m-0 my-3"><a class="text-primary text-decoration-none" asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">@post.Title</a></h5>
@@ -47,7 +73,7 @@
                 </div>
             </div>
         </section>
-        @*index with post*@
+        <!--/index withpost-->
     }
 }
 

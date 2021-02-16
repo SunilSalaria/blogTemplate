@@ -1,9 +1,7 @@
 /*====================================*/
-/*  Bootstrap override classes */
+/*     Bootstrap override classes     */
 /*====================================*/
-
 /*  primary color override   */
-
 .bg-primary {
     background-color: #307fc1 !important;
 }
@@ -17,9 +15,8 @@
 }
 
 /*====================================*/
-/*  common classes*/
+/*           common classes          */
 /*====================================*/
-
 .navbar-toggler:focus {
     box-shadow: none !important;
 }
@@ -51,7 +48,7 @@ input:focus {
     right: 3px;
     top: 32px;
     height: 40px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 /*====================================*/
@@ -59,13 +56,11 @@ input:focus {
 /*====================================*/
 
 /*==========header section============*/
-
-#nav-bar .navbar-toggler {
+/*#nav-bar .navbar-toggler {
     border: 2px solid;
 }
-
+*/
 /*==========Login Page============*/
-
 #form .social-icon {
     height: 33px;
     width: 33px;
@@ -85,7 +80,6 @@ input:focus {
     }
 
 /*==========Register Page============*/
-
 #register .social-icon {
     height: 33px;
     width: 33px;
@@ -103,8 +97,8 @@ input:focus {
         background: white;
         color: #307fc1 !important;
     }
-/*==========index Page============*/
 
+/*==========index Page============*/
 #blog-cards .card .card-detail {
     position: absolute !important;
     top: 0;
@@ -147,11 +141,44 @@ input:focus {
     opacity: 0;
 }
 
+#background-content .bg-img {
+    background: #040d21;
+    min-height: 800px;
+}
+
+#background-content .svg-style {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
 
 /*========= @media queries section ==============*/
-
-@media (min-width: 1400px){
+/*media query for large screen up to 1200px*/
+@media (min-width: 1200px) {
     #blog-cards .container {
         max-width: 1000px !important;
+    }
+}
+
+/*media query for smallest screen up to 767.8px*/
+@media (max-width:767.8px) {
+    #background-content .size-h1 {
+        font-size: 2.5rem;
+        line-height: 1;
+        font-weight: 800;
+    }
+}
+
+/*media query for medium screen to largest screen*/
+@media (min-width:768px) {
+    #background-content .size-h1 {
+        font-size: 4.1rem;
+        font-weight: 800;
+        line-height: 1;
+    }
+
+    #background-content .size-paragraph {
+        font-size: 1.5rem;
     }
 }
