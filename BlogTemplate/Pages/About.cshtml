@@ -1,9 +1,177 @@
 @page
 @model AboutModel
 @{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "About Us";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@Model.Message</h3>
-
-<p>Use this area to provide additional information.</p>
+<!--background video-->
+<section id="video-wraper">
+    <div class="container-fluid pb-5">
+        <div class="row">
+            <div class="col-12 px-0 position-relative">
+                <div class="video-shade">
+                    <video src="~/video/About-video-1.mp4" class="w-100" muted loop autoplay type="video/mp4"></video>
+                </div>
+                <div class="video-heading my-4">
+                    <h1 class="size-h1 text-white fw-bold mb-4">@ViewData["Title"]</h1>
+                    <h2 class="text-white">@Model.Message</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/background video-->
+<!-- corporate identities-->
+<section id="identity">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-4 col-xs-12 d-lg-flex align-items-center">
+                <h2 class="text-center mb-lg-0 mb-4">We create brand new corporate identities.</h2>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-md-6">
+                <p class="text-muted text-style mb-4 mb-md-0">
+                    Cras mattis iudicium purus sit amet fermentum at nos hinc posthac, sitientis piros afros.
+                    Lorem ipsum dolor sit amet, consectetur adipisici elit, petierunt uti sibi concilium totius Galliae
+                    in diem sed eius mod tempor incidunt ut labore et dolore magna.
+                </p>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-md-6">
+                <p class="text-muted text-style m-0">
+                    Cras mattis iudicium purus sit amet fermentum at nos hinc posthac, sitientis piros afros.
+                    Lorem ipsum dolor sit amet, consectetur adipisici elit, petierunt uti sibi concilium totius Galliae
+                    in diem sed eius mod tempor incidunt ut labore et dolore magna.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/corporate identities-->
+<!-- additonal-info-->
+<section id="additonal-info">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div class="background-img mb-4 mb-md-0"></div>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <h2 class="mb-4 text-center">
+                    We Deal With The Aspects
+                    Professional <span class="text-primary">IT Services</span>
+                </h2>
+                <p class="text-muted mb-4 text-style">
+                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+                    Sections 1.10.32 and 1.10.33 from “de Finibus Bonorum et Malorum" by Cicero are also reproduced
+                </p>
+                <div class="barwraper mb-4">
+                    <span class="fw-bold">Web Development</span>
+                    <div class="progress mt-2">
+                        <div class="development progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            <span data-bs-toggle="tooltip" class="text-end" style="margin-top:-2px;" data-bs-placement="top">85%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="barwraper mb-4">
+                    <span class="fw-bold">Web Design</span>
+                    <div class="progress mt-2">
+                        <div class="design progress-bar" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            <span data-bs-toggle="tooltip" class="text-end" style="margin-top:-2px;" data-bs-placement="top">76%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="barwraper mb-4">
+                    <span class="fw-bold">Digital Marketing</span>
+                    <div class="progress mt-2 position-relative">
+                        <div class="marketing progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            <span data-bs-toggle="tooltip" class="text-end" style="margin-top:-2px;" data-bs-placement="top">72%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="barwraper">
+                    <span class="fw-bold">Market Analysis</span>
+                    <div class="progress mt-2">
+                        <div class="analysis progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                            <span data-bs-toggle="tooltip" class="text-end" style="margin-top:-2px;" data-bs-placement="top">70%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/additonal-info-->
+<!--about me-->
+<section id="about">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <img src="~/img/about-img.png" alt="loading" class="img-fluid img-responsive mb-4 mb-md-0" />
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <h5 class="font-monospace mb-4 text-center text-primary">Who Am I ?</h5>
+                <h2 class="mb-4 text-center"> I have 5+ Years Business Experiences</h2>
+                <p class="mb-4 text-muted text-style">Distinctively exploit optimal alignments for intuitive. Quickly coordinate business applications.</p>
+                <div class="d-flex mb-4">
+                    <div>
+                        <i class="fas fa-cog text-white bg-primary text-center icon me-3"></i>
+                    </div>
+                    <div>
+                        <h5>Digital Experience</h5>
+                        <p>Morem Ipsum is simply dummy text of the printing and pepesetting found.</p>
+                    </div>
+                </div>
+                <div class="d-flex mb-4">
+                    <div>
+                        <i class=" fas fa-desktop text-white bg-primary text-center icon me-3"></i>
+                    </div>
+                    <div>
+                        <h5>Flexible Solutions</h5>
+                        <p>Morem Ipsum is simply dummy text of the printing and pepesetting found.</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div>
+                        <i class="fas fa-tools text-white bg-primary text-center icon me-3"></i>
+                    </div>
+                    <div>
+                        <h5>Quality Work</h5>
+                        <p class="m-0">Morem Ipsum is simply dummy text of the printing and pepesetting found.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/about me-->
+<!--IT solution-->
+<section id="solution">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <img src="~/img/about-img3.png" class="img-fluid mb-4 mb-md-0 img-responsive" />
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <h2 class="text-center mb-4">
+                    Preparing For Your Success
+                    Provide Best <span class="text-primary">IT Solutions</span>.
+                </h2>
+                <p class="m-0 mb-4 text-style">
+                    It is a long established fact that a reader will be distracted by the readable content of a page when
+                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+                    opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages.
+                </p>
+                <div class="border-start ms-3">
+                    <p class="mb-4 text-muted text-style ms-3">
+                        The standard chunk of Lorem Ipsum used since the 1500s is and reproduced below for those interested.
+                        Sections 1.10.32 and also 1.10.33 from “de Finibus Bonorum et Malorum" by Cicero
+                        are alse reproduced in their exact original form, accompanied
+                    </p>
+                    <p class="ms-3 text-muted text-style mb-4">
+                        The standard chunk of Lorem Ipsum used since the 1500s is and reproduced below
+                        for those interested
+                    </p>
+                </div>
+            <a asp-page="./About"><button class="btn bg-primary text-white px-3 ms-3 rounded-0 text-capitalize shadow-sm btn-style">More Details</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/IT solution-->

@@ -63,3 +63,16 @@ $(document).scroll(function () {
      $("#nav-bar .navbar").addClass("border-bottom shadow-sm");
     };
 });
+
+// progress bar
+$(window).scroll(function () {
+    $('#additonal-info .development').css('width', '85%');
+    $('#additonal-info .design').css('width', '76%');
+    $('#additonal-info .marketing').css('width', '72%');
+    $('#additonal-info .analysis').css('width', '70%');
+});
+
+//progress bar tooltip
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip({ trigger: 'manual' }).tooltip('show');
+});

@@ -51,10 +51,18 @@ input:focus {
     cursor: pointer;
 }
 
+.size-h1 {
+    font-size: 4.1rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.text-style {
+    text-align: justify;
+}
 /*====================================*/
 /* custom-common classes by section */
 /*====================================*/
-
 /*==========header section============*/
 /*#nav-bar .navbar-toggler {
     border: 2px solid;
@@ -153,32 +161,103 @@ input:focus {
     transform: translate(-50%,-50%);
 }
 
+/*========== About us Page============*/
+#video-wraper video{
+    height:100vh;
+    object-fit:cover;
+}
+
+#video-wraper .video-shade::after {
+    background-color: #000;
+    content: "";
+    opacity: 0.7;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#video-wraper .video-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+
+#additonal-info .progress{
+    height:0.7rem;
+    border-radius:0;
+}
+
+#additonal-info .progress-bar {
+    background: #307fc1;
+    transition:width 6.5s ease;
+}
+
+#additonal-info .background-img {
+    padding-top: 300px;
+    padding-bottom: 220px;
+    background: #00bd8e url(../img/startup4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#about .icon {
+    font-size: 36px;
+    height: 75px;
+    width: 75px;
+    line-height: 75px;
+    border-radius: 100px 100px 100px 100px;
+    margin-top: 6px;
+}
+    #about .icon:hover {
+        background: rgba(12, 90, 219, 0.18) !important;
+        color: #307fc1 !important;
+    }
 /*========= @media queries section ==============*/
 /*media query for large screen up to 1200px*/
-@media (min-width: 1200px) {
-    #blog-cards .container {
-        max-width: 1000px !important;
+    @media (min-width: 1200px) {
+        #blog-cards .container {
+            max-width: 1000px !important;
+        }
     }
-}
+    /*media query for smallest screen up to 767.8px*/
+    @media (max-width:767.8px) {
+        .size-h1 {
+            font-size: 2.4rem;
+            line-height: 1;
+            font-weight: 800;
+        }
 
-/*media query for smallest screen up to 767.8px*/
-@media (max-width:767.8px) {
-    #background-content .size-h1 {
-        font-size: 2.4rem;
-        line-height: 1;
-        font-weight: 800;
+        #video-wraper video {
+            object-fit: cover;
+            height: 50vh;
+        }
     }
-}
+    /*media query for medium screen to largest screen*/
+    @media (min-width:768px) {
+        .size-h1 {
+            font-size: 4.1rem;
+            font-weight: 800;
+            line-height: 1;
+        }
 
-/*media query for medium screen to largest screen*/
-@media (min-width:768px) {
-    #background-content .size-h1 {
-        font-size: 4.1rem;
-        font-weight: 800;
-        line-height: 1;
+        #background-content .size-paragraph {
+            font-size: 1.5rem;
+        }
     }
-
-    #background-content .size-paragraph {
-        font-size: 1.5rem;
+    /*media query for ipad and ipad pro*/
+    @media screen and (min-width:768px) and (max-width:1199px) {
+        #video-wraper video {
+            height: 50vh;
+            object-fit: cover;
+        }
+        #about .img-responsive, #solution .img-responsive{
+            height:660px;
+            object-fit:cover;
+        }
     }
-}
