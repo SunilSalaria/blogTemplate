@@ -57,6 +57,10 @@ input:focus {
     line-height: 1;
 }
 
+.size-paragraph {
+    font-size: 1.5rem;
+}
+
 .text-style {
     text-align: justify;
 }
@@ -246,7 +250,7 @@ input:focus {
             line-height: 1;
         }
 
-        #background-content .size-paragraph {
+         .size-paragraph {
             font-size: 1.5rem;
         }
     }
