@@ -53,14 +53,14 @@
                     @foreach (var post in Model.PostSummaries)
                     {
                         <div class="col-lg-4 col-md-6 col-12 mb-4">
-                            <div class="card border-0 card-shadow">
+                            <div class="card border-0">
                                 <a class="text-dark text-decoration-none" asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">
                                     <img title="Read more..." src="https://images.ctfassets.net/2d5q1td6cyxq/6AwFCHfopyKVcOKDYEsdIo/430d5439d881053b420bd38d24f1f656/Squarecheckout.jpg?w=319&h=179&fm=webp&q=85&fit=thumb" class="card-img-top img-thumbnail" alt="loading">
                                 </a>
                                 <div class="card-body position-relative">
                                     <span class="card-detail text-uppercase position-absolute shadow">Articles</span>
                                     <h5 class="m-0 my-3"><a class="text-primary text-decoration-none" asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">@post.Title</a></h5>
-                                    <p class="m-0">@post.Excerpt</p>
+                                    <p class="m-0 text-style">@post.Excerpt</p>
                                 </div>
                                 <div class="card-footer bg-white">
                                     <div class="float-end text-muted">@post.PublishTime.ToString("MMM dd, yyyy")</div>

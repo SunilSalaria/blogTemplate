@@ -1,0 +1,110 @@
+@page
+@{
+    ViewData["Title"] = "Let's get in touch. Contact Us.";
+}
+<!--Contact background video-->
+<section id="contact-wraper">
+    <div class="container-fluid pb-5">
+        <div class="row">
+            <div class="col-12 px-0 position-relative">
+                <div class="video-shade">
+                    <video src="~/video/Contact-1 (1).mp4" class="w-100" muted loop autoplay type="video/mp4"></video>
+                </div>
+                <div class="video-heading my-4">
+                    <h1 class="size-h1 text-white fw-bold">@ViewData["Title"]</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/contact background video-->
+<!--how to meet-->
+<section id="contact">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-xs-12">
+                <h5 class="mb-4 text-center text-primary font-monospace mt-0">Contact Us</h5>
+                <h2 class="text-center m-0 mb-4">
+                    We Are Here For You
+                </h2>
+                <p class="text-muted text-style mb-4">
+                    Got a project in mind? We’d love to hear about it. Take five minutes to
+                    fill out our project form so that we can get to know you and understand your project.
+                </p>
+            </div>
+            <div class="col-md-6 col-xs-12 col-lg-4 mb-4 mb-lg-0">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center"><i class="far fa-map text-primary fa-3x mb-4"></i></div>
+                        <h5 class="text-center mb-4">Our Address</h5>
+                        <p class="text-center m-0"> 54/1 New sorini Asut, Melbord Austria.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xs-12 mb-4 mb-lg-0">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center"><i class="fas fa-mobile-alt fa-3x text-primary mb-4"></i></div>
+                        <h5 class="text-center mb-4">Contact Directly</h5>
+                        <div class="text-center"><a class="text-decoration-none text-dark" href="tel:+13239134688">+1 323-913-4688</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xs-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center"><i class="far fa-envelope text-primary fa-3x mb-4"></i></div>
+                        <h5 class="text-center mb-4">Contact Through Email</h5>
+                        <div class="text-center"> <a href="mailto:mail@example.com" class="text-decoration-none text-dark">mail@example.com</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/How to meet-->
+<!--contact form-->
+<section id="contact-form">
+    <div class="container py-5">
+        <div class="row align-items-lg-center">
+            <div class="col-xs-12 col-lg-6">
+                <h5 class="font-monospace mb-4 text-primary text-center">Contact Us</h5>
+                <h2 class="mb-4 mt-0 text-center">
+                    Feel Free Contact
+                    Us Now
+                </h2>
+                <form class="row">
+                    <div class="col-md-6 mb-4">
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="text" class="form-control" placeholder="Phone">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <input type="text" class="form-control" placeholder="Website">
+                    </div>
+                    <div class="col-12 mb-4">
+                        <textarea class="form-control" placeholder="Type Your Message" rows="7"></textarea>
+                    </div>
+                    <div class="col-12 mb-lg-4">
+                        <div class="text-center">  <button type="submit" class="btn bg-primary py-2 text-capitalize text-white rounded-0 shadow-sm btn-style">Send Message</button></div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-xs-12">
+                <img src="~/img/appointment-img.jpg" class="img-fluid d-none d-lg-block img-responsive" />
+            </div>
+        </div>
+    </div>
+    <!-- map -->
+    <div class="pt-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13745.578448036644!2d75.95196517196884!3d30.538153188684518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391069a660696aef%3A0x3bc789e57615106b!2sChandigarh%2C%20Punjab%20148023!5e0!3m2!1sen!2sin!4v1600013040607!5m2!1sen!2sin"
+                class="w-100 d-block" height="400px" frameborder="0" style="border:0;" allowfullscreen=""
+                aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <!-- /map -->
+</section>
+<!--/contact form-->

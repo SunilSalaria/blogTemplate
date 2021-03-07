@@ -31,7 +31,9 @@ input:focus {
 
 .form-control:focus {
     border-color: #307fc1 !important;
+    box-shadow:none;
 }
+
 
 .btn-style {
     font-weight: 500;
@@ -210,6 +212,7 @@ input:focus {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 #about .icon {
     font-size: 36px;
     height: 75px;
@@ -218,10 +221,49 @@ input:focus {
     border-radius: 100px 100px 100px 100px;
     margin-top: 6px;
 }
-    #about .icon:hover {
-        background: rgba(12, 90, 219, 0.18) !important;
-        color: #307fc1 !important;
-    }
+
+#about .icon:hover {
+    background: rgba(12, 90, 219, 0.18) !important;
+    color: #307fc1 !important;
+}
+
+/*========== Contact us Page============*/
+
+#contact .card:hover {
+    box-shadow: 0 4px 20px rgb(0 0 0 / 16%);
+}
+
+#contact a:hover {
+    color: #307fc1 !important;
+}
+
+#contact-wraper video {
+    height: 100vh;
+    object-fit: cover;
+}
+
+#contact-wraper .video-shade::after {
+    background-color: #000;
+    content: "";
+    opacity: 0.7;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#contact-wraper .video-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+
+
 /*========= @media queries section ==============*/
 /*media query for large screen up to 1200px*/
     @media (min-width: 1200px) {
@@ -232,12 +274,12 @@ input:focus {
     /*media query for smallest screen up to 767.8px*/
     @media (max-width:767.8px) {
         .size-h1 {
-            font-size: 2.4rem;
+            font-size: 2.1rem;
             line-height: 1;
             font-weight: 800;
         }
 
-        #video-wraper video {
+        #video-wraper video, #contact-wraper video{
             object-fit: cover;
             height: 50vh;
         }
@@ -256,11 +298,11 @@ input:focus {
     }
     /*media query for ipad and ipad pro*/
     @media screen and (min-width:768px) and (max-width:1199px) {
-        #video-wraper video {
+        #video-wraper video, #contact-wraper video {
             height: 50vh;
             object-fit: cover;
         }
-        #about .img-responsive, #solution .img-responsive{
+      .img-responsive{
             height:660px;
             object-fit:cover;
         }
