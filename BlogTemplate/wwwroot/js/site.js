@@ -39,6 +39,8 @@ $(document).scroll(function () {
         $("#nav-bar .navbar-toggler").css({ "border": "2px solid black" }); 
         // add navbar border and shadow
         $("#nav-bar .navbar").addClass("border-bottom shadow-sm");
+        //logo change
+        $("nav .navbar-brand img").attr("src", "/img/dark-logo-pardeep.png");
      
     }
     else if ($(document).scrollTop() <= 30) {
@@ -50,6 +52,8 @@ $(document).scroll(function () {
         $("#nav-bar .navbar-toggler").css({ "border": "2px solid white" }); 
         // remove navbar and shadow border
         $("#nav-bar .navbar").removeClass("border-bottom shadow-sm");
+        //logo change
+        $("nav .navbar-brand img").attr("src", "/img/logo-pardeep.png");
     };
     // media query for mobile screen 
     if ($(window).width() < 769) {
@@ -60,7 +64,9 @@ $(document).scroll(function () {
      // toggler button border color
      $("#nav-bar .navbar-toggler").css({ "border": "2px solid black" });
      // add navbar border and shadow
-     $("#nav-bar .navbar").addClass("border-bottom shadow-sm");
+        $("#nav-bar .navbar").addClass("border-bottom shadow-sm");
+        //logo change
+        $("nav .navbar-brand img").attr("src", "/img/dark-logo-pardeep.png");
     };
 });
 
