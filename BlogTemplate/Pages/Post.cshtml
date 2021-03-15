@@ -6,124 +6,210 @@
 @{
     ViewData["Title"] = Model.Post.Title;
 }
-
-
-<article>
-    <div class="col-md-12">
-        <h1>@Model.Post.Title</h1>
-        <h5 name="date" class="date text-muted">@Model.Post.PubDate.ToString("MMM dd, yyyy")</h5>
-        <p>@Model.HtmlBody()</p>
-    </div>
-
-    @if (User.Identity.IsAuthenticated)
-    {
-        <div class="col-md-12">
-            <h4 class="text-primary"><a asp-page="/edit" asp-route-id="@Model.Post.Id.ToString("N")" asp-route-slug="@Model.Post.Slug">Edit Post</a></h4>
+<!--post background video-->
+<section id="post-video">
+    <div class="container-fluid pb-5">
+        <div class="row">
+            <div class="col-12 px-0 position-relative">
+                <div class="video-shade">
+                    <video src="~/video/Contact-1 (1).mp4" class="w-100" muted loop autoplay type="video/mp4"></video>
+                </div>
+                <div class="video-heading my-4">
+                    <h1 class="size-h1 text-white fw-bold">@ViewData["Title"]</h1>
+                </div>
+            </div>
         </div>
-        <form class="col-md-12" id="deletepost" method="post">
-            @if (Model.Post.IsDeleted)
-            {
-                <div>
-                    <input type="submit" name="undelete" class="btn btn-primary btn-sm" value="Undelete" asp-page-handler="UnDeletePost" />
+    </div>
+</section>
+<!--/post background video-->
+<!-- about post-->
+<section id="post-wraper">
+    <div class="container pb-5">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">@Model.Post.Title</h2>
+                        <div class=" mb-4 text-center" style="font-size:14px;"><span><i class="fas fa-user me-1"></i> By Pardeep Salaria</span> <span><i class="fab fa-battle-net mx-1"></i> Technology</span> <span><i class="far fa-calendar-alt mx-1"></i> @Model.Post.PubDate.ToString("MMM dd, yyyy") </span></div>
+                        <p class="m-0">@Model.HtmlBody()</p>
+                    </div>
                 </div>
-            }
-            else
-            {
-                <div>
-                    <input type="submit" name="delete" class="btn btn-primary btn-sm" value="Delete" asp-page-handler="DeletePost" />
-                </div>
-            }
-        </form>
-        <div class="col-md-6">
-            <h2>Comments</h2>
-            @if (Model.Post.Comments.Count == 0)
-            {
-                <p class="text-muted">No comments yet. Be the first to comment!</p>
-            }
-            @foreach (var comment in Model.Post.Comments)
-            {
-                string cssClass = comment.IsPublic ? "" : "deletedContent";
-                <form id="form1" method="post">
-                    <div class="@cssClass">
-                        @if (comment.IsPublic)
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /about post-->
+
+@if (User.Identity.IsAuthenticated)
+{
+    <!-- Edit or delete post-->
+    <section id="edit">
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!--post form-->
+                    <form id="deletepost" method="post">
+                        @if (Model.Post.IsDeleted)
                         {
-                            <div class="well well-sm">
-                                <h4 name="Comment-Title" class="commentTitle">@comment.AuthorName</h4>
-                                <h6 name="Comment-Date" class="commentDate">@comment.PubDate.ToString("MMM dd, yyyy")</h6>
-                                <p name="Comment-Body" class="commentBody">@comment.Body</p>
-                                <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
-                                <input type="hidden" name="slug" value="@Model.Post.Slug" />
-                                <input type="submit" name="delete" class="btn btn-primary btn-sm" value="Delete Comment" asp-page="ManageComment" asp-page-handler="DeleteComment" />
-                            </div>
+
+                            <input type="submit" name="undelete" class="btn bg-primary text-white rounded-0 shadow-sm btn-style" value="Undelete" asp-page-handler="UnDeletePost" />
 
                         }
                         else
                         {
-                            <div class="well well-sm">
-                                <del class="h4">
-                                    <h4 name="Comment-Title" class="commentTitle">@comment.AuthorName</h4>
-                                    <h6 name="Comment-Date" class="commentDate">@comment.PubDate.ToString("MMM dd, yyyy")</h6>
-                                </del>
-                                <del><p name="Comment-Body" class="commentBody">@comment.Body</p></del>
-
-                                <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
-                                <input type="hidden" name="slug" value="@Model.Post.Slug" />
-                                <input type="submit" name="undelete" class="btn btn-primary btn-sm" value="Republish Comment" asp-page="ManageComment" asp-page-handler="UndeleteComment" /> 
+                            <div class="text-center">
+                                <a asp-page="/edit" class="bg-primary btn text-white px-3 link-color rounded-0 shadow-sm btn-style text-capitalize" asp-route-id="@Model.Post.Id.ToString("N")" asp-route-slug="@Model.Post.Slug">Edit Post</a>
+                                <span class="mx-4">OR</span>
+                                <input type="submit" name="delete" class="btn bg-primary text-white rounded-0 shadow-sm btn-style text-capitalize" value="Delete Post" asp-page-handler="DeletePost" />
                             </div>
                         }
-                    </div>
-                </form>
-            }
-        </div>
-    }
-    else
-    {
-        <div class="col-md-6">
-            <h2>Comments</h2>
-            @if (Model.Post.Comments.Count == 0)
-            {
-                <p class="text-muted">No comments yet. Be the first to comment!</p>
-            }
-            @foreach (var comment in Model.Post.Comments)
-            {
-                @if (comment.IsPublic)
-                {
-                    <form id="form1" method="post">
-                        <div class="well well-sm">
-                            <h4 name="Comment-Title" class="commentTitle">@comment.AuthorName</h4>
-                            <h6 name="Comment-Date" class="commentDate">@comment.PubDate.ToString("MMM dd, yyyy")</h6>
-                            <p name="Comment-Body" class="commentBody">@comment.Body</p>
-                            <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
-                            <input type="hidden" name="slug" value="@Model.Post.Slug" />
-                        </div>
                     </form>
-                }
-            }
-        </div>
-    }
-
-    <hr class="commentsDivider" />
-    @if (Model.Post.IsPublic && !Model.IsCommentsFull)
-    {
-        <div class="col-sm-6" style="height:6px;"></div>
-        <div class="add-comment-form">
-            <div class="col-md-6">
-                <h3>Add Comment</h3>
-
-                <div class="well">
-                    <form id="comment-form" method="post">
-                        <div class="form-group">
-                            <label for="AuthorName">Name</label>
-                            <input type="text" class="form-control" placeholder="" name="NewComment.AuthorName" />
-                        </div>
-                        <div class="form-group">
-                            <label for="Body">Comment</label>
-                            <textarea placeholder="" class="form-control" name="NewComment.Body"></textarea>
-                        </div>
-                        <input type="submit" name="publish" class="btn btn-primary btn-sm" value="Publish" asp-page-handler="PublishComment" />
-                    </form>
+                    <!--/post form-->
                 </div>
             </div>
         </div>
-    }
-</article>
+    </section>
+    <!-- / Edit or delete post-->
+    <!-- comments-->
+    <section id="post-comment">
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 class="text-center mb-4">Comments</h2>
+                    @if (Model.Post.Comments.Count == 0)
+                    {
+                        <p class="text-muted text-center mb-4">No comments yet. Be the first to comment!</p>
+                    }
+                    @foreach (var comment in Model.Post.Comments)
+                    {
+                        string cssClass = comment.IsPublic ? "" : "deletedContent";
+                        <form id="form1" method="post">
+                            <div class="@cssClass">
+                                @if (comment.IsPublic)
+                                {
+                                    <div class="col-xs-12">
+                                        <div class="card mb-4">
+                                            <div class="card-body d-md-flex">
+                                                <div class="text-center">
+                                                    <img src="~/img/avatar.png" class="me-md-5 mb-4 mb-md-0" />
+                                                </div>
+                                                <div>
+                                                    <h2 class="mb-4 text-md-start text-center">@comment.AuthorName</h2>
+                                                    <p class="text-style mb-4">@comment.Body</p>
+                                                    <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
+                                                    <input type="hidden" name="slug" value="@Model.Post.Slug" />
+                                                    <div class="text-center text-md-start">
+                                                        <span class="me-2"><i class="far fa-clock me-1"></i> @comment.PubDate.ToString("MMM dd, yyyy") </span>
+                                                        <input type="submit" name="delete" class=" mt-4 mt-md-0 btn bg-primary text-white rounded-0 shadow-sm btn-style text-capitalize" value="Delete Comment" asp-page="ManageComment" asp-page-handler="DeleteComment" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class=" col-xs-12 mb-4">
+                                        <div class="card">
+                                            <div class="card-body d-md-flex">
+                                                <div class="text-center">
+                                                    <img src="~/img/avatar.png" class="me-md-5 mb-4 mb-md-0" />
+                                                </div>
+                                                <div>
+                                                    <del>
+                                                        <h2 class="mb-4 text-md-start text-center">@comment.AuthorName</h2>
+                                                    </del>
+                                                    <del><p class="mb-4 text-style">@comment.Body</p></del>
+                                                    <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
+                                                    <input type="hidden" name="slug" value="@Model.Post.Slug" />
+                                                    <div class="text-center text-md-start">
+                                                        <del><span class="me-2"><i class="far fa-clock me-1"></i> @comment.PubDate.ToString("MMM dd, yyyy")</span></del>
+                                                        <input type="submit" name="undelete" class="mt-4 mt-md-0 btn bg-primary text-white rounded-0 shadow-sm btn-style text-capitalize" value="Republish Comment" asp-page="ManageComment" asp-page-handler="UndeleteComment" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </form>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/comments-->
+}
+else
+{
+    <!-- dashboard comment-->
+    <section id="post-main">
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <h2 class="text-center mb-4">Comments</h2>
+                    @if (Model.Post.Comments.Count == 0)
+                    {
+                        <p class="text-muted">No comments yet. Be the first to comment!</p>
+                    }
+                    @foreach (var comment in Model.Post.Comments)
+                    {
+                        @if (comment.IsPublic)
+                        {
+                            <form id="form1" method="post">
+                          
+                                    <div class=" mb-4">
+                                    <div class="card">
+                                        <div class="card-body d-md-flex">
+                                            <div class="text-center">
+                                                <img src="~/img/avatar.png" class="me-md-5 mb-4 mb-md-0" />
+                                            </div>
+                                            <div>
+                                                <h2 class="mb-4 text-center text-md-start">@comment.AuthorName</h2>
+                                                <p class="text-style mb-4">@comment.Body</p>
+                                                <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
+                                                <input type="hidden" name="slug" value="@Model.Post.Slug" />
+                                                <div class="text-center text-md-start">
+                                                    <span><i class="far fa-clock me-1"></i> @comment.PubDate.ToString("MMM dd, yyyy") </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        }
+                    }
+                </div>
+
+            </div>
+        </div>
+    </section>
+}
+<!-- /dashboard comment-->
+@if (Model.Post.IsPublic && !Model.IsCommentsFull)
+{
+    <!-- Add comment-->
+    <section class="container pb-5">
+        <div class="row">
+            <div class="col-xs-12 col-width d-md-block mx-auto">
+                <h2 class="text-center mb-4">Add Comment</h2>     
+                    <form id="comment-form" method="post">
+                        <div class="form-group">
+                            <label for="AuthorName" class="mb-2 ms-1">Name</label>
+                            <input type="text" class="form-control mb-4" placeholder="Your Name"  name="NewComment.AuthorName" />
+                        </div>
+                        <div class="form-group">
+                            <label class="mb-2 ms-1" for="Body">Comment</label>
+                            <textarea placeholder="Your Comment" class="form-control mb-4" name="NewComment.Body"></textarea>
+                        </div>
+                        <div class="text-center">
+                        <input type="submit" name="publish" class="btn bg-primary text-white rounded-0 shadow-sm btn-style text-capitalize" value="Publish" asp-page-handler="PublishComment" />
+                            </div>
+                    </form>
+                    </div>
+                </div>
+    </section>
+    <!--/Add comment-->
+}
+

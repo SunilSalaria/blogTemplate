@@ -66,6 +66,10 @@ input:focus {
 .text-style {
     text-align: justify;
 }
+.card-shadow {
+    box-shadow: 0 4px 20px rgb(0 0 0 / 16%);
+}
+
 /*====================================*/
 /* custom-common classes by section */
 /*====================================*/
@@ -90,12 +94,12 @@ input:focus {
     border-radius: 50%;
 }
 
-    #form .social-icon:hover {
-        transform: rotate(360deg);
-        box-shadow: 0 0 0 3px #2874ba;
-        background: white;
-        color: #307fc1 !important;
-    }
+#form .social-icon:hover {
+    transform: rotate(360deg);
+    box-shadow: 0 0 0 3px #2874ba;
+    background: white;
+    color: #307fc1 !important;
+ }
 
 /*==========Register Page============*/
 #register .social-icon {
@@ -266,7 +270,50 @@ input:focus {
     text-align: center;
     color: white;
 }
+/*========== Post page ============*/
+#post-video video {
+    height: 100vh;
+    object-fit: cover;
+}
 
+#post-video .video-shade::after {
+    background-color: #000;
+    content: "";
+    opacity: 0.7;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#post-video .video-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+/*========== footer ============*/
+#footer .social-icon {
+    height: 33px;
+    width: 33px;
+    line-height: 33px;
+    transition-duration: 1s;
+    background: #2874ba;
+    margin: 0.25rem;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.075);
+    border-radius: 50%;
+}
+
+#footer .social-icon:hover {
+    transform: rotate(360deg);
+    box-shadow: 0 0 0 3px #2874ba;
+    background: white;
+    color: #307fc1 !important;
+ }
 
 /*========= @media queries section ==============*/
 /*media query for large screen up to 1200px*/
@@ -283,7 +330,7 @@ input:focus {
             font-weight: 800;
         }
 
-        #video-wraper video, #contact-wraper video{
+        #video-wraper video, #contact-wraper video, #post-video video{
             object-fit: cover;
             height: 50vh;
         }
@@ -299,10 +346,13 @@ input:focus {
          .size-paragraph {
             font-size: 1.5rem;
         }
+        .col-width{
+            width:80%;
+        }
     }
     /*media query for ipad and ipad pro*/
     @media screen and (min-width:768px) and (max-width:1199px) {
-        #video-wraper video, #contact-wraper video {
+        #video-wraper video, #contact-wraper video, #post-video video {
             height: 50vh;
             object-fit: cover;
         }
