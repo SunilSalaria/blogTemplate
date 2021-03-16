@@ -1,16 +1,15 @@
 @page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Hi, I'm Pardeep Salaria";
     <!-- background image-->
-
 <section id="background-content">
     <div class="overflow-hidden bg-img">
         <div class="container position-relative py-5">
             <div class="row mt-3 align-items-center pt-3">
                 <div class="col-xs-12 col-lg-6 order-2 order-lg-1" style="z-index:1;">
-                    <h1 class="text-white text-center size-h1 m-0 mb-4">Hi, I'm Pardeep Salaria</h1>
-                    <p class="text-muted m-0 mb-4 text-center size-paragraph">
+                    <h1 class="text-white text-center size-h1 mb-4">@ViewData["Title"]</h1>
+                    <p class="text-muted mb-4 text-center size-paragraph">
                         I am a software engineer, blogger, open-source contributor working on Microsoft Technologies in India.
                     </p>
                     <div class="text-center mb-4 mb-lg-0">

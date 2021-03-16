@@ -70,18 +70,13 @@ input:focus {
     box-shadow: 0 4px 20px rgb(0 0 0 / 16%);
 }
 
+.font-small{
+    font-size:14px;
+}
+
 /*====================================*/
 /* custom-common classes by section */
 /*====================================*/
-/*==========header section============*/
-/*#nav-bar .navbar-toggler {
-    border: 2px solid;
-}
-*/
-
-
-
-
 /*==========Login Page============*/
 #form .social-icon {
     height: 33px;
@@ -295,6 +290,11 @@ input:focus {
     z-index: 3;
     text-align: center;
     color: white;
+}
+
+#post-wraper div p{
+    margin:0;
+    text-align:justify;
 }
 /*========== footer ============*/
 #footer .social-icon {

@@ -24,6 +24,8 @@ $(document).ready(function () {
         $("#nav-bar .nav-link, .navbar-brand, .navbar-toggler span").css({ "color": "black" });
         // toggler button border
         $("#nav-bar .navbar-toggler").css({ "border": "2px solid black" });
+        //logo change
+        $("nav .navbar-brand img").attr("src", "/img/dark-logo-pardeep.png");
     });
 
     });

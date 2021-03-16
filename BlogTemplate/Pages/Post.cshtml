@@ -12,10 +12,11 @@
         <div class="row">
             <div class="col-12 px-0 position-relative">
                 <div class="video-shade">
-                    <video src="~/video/Contact-1 (1).mp4" class="w-100" muted loop autoplay type="video/mp4"></video>
+                    <video src="~/video/Contact-2.mp4" class="w-100" muted loop autoplay type="video/mp4"></video>
                 </div>
                 <div class="video-heading my-4">
-                    <h1 class="size-h1 text-white fw-bold">@ViewData["Title"]</h1>
+                    <h1 class="size-h1 text-white fw-bold mb-4">@ViewData["Title"]</h1>
+                    <p class="text-white size-paragraph m-0">Lorem Ipsum dummy text.</p>
                 </div>
             </div>
         </div>
@@ -30,8 +31,8 @@
                 <div class="card shadow-sm border-0">
                     <div class="card-body">
                         <h2 class="text-center mb-4">@Model.Post.Title</h2>
-                        <div class=" mb-4 text-center" style="font-size:14px;"><span><i class="fas fa-user me-1"></i> By Pardeep Salaria</span> <span><i class="fab fa-battle-net mx-1"></i> Technology</span> <span><i class="far fa-calendar-alt mx-1"></i> @Model.Post.PubDate.ToString("MMM dd, yyyy") </span></div>
-                        <p class="m-0">@Model.HtmlBody()</p>
+                        <div class=" mb-4 text-center font-small"><span><i class="fas fa-user me-1"></i> By Pardeep Salaria</span> <span><i class="fab fa-battle-net mx-1"></i> Technology</span> <span><i class="far fa-calendar-alt mx-1"></i> @Model.Post.PubDate.ToString("MMM dd, yyyy") </span></div>
+                        <p> @Model.HtmlBody()</p>
                     </div>
                 </div>
             </div>
@@ -150,7 +151,7 @@ else
                     <h2 class="text-center mb-4">Comments</h2>
                     @if (Model.Post.Comments.Count == 0)
                     {
-                        <p class="text-muted">No comments yet. Be the first to comment!</p>
+                        <p class="text-muted text-center m-0">No comments yet. Be the first to comment!</p>
                     }
                     @foreach (var comment in Model.Post.Comments)
                     {
