@@ -1,0 +1,122 @@
+@page
+@{
+    ViewData["Title"] = "Our Services";
+}
+<!--service background video-->
+<section id="service-video">
+    <div class="container-fluid pb-5">
+        <div class="row">
+            <div class="col-12 px-0 position-relative">
+                <div class="video-shade">
+                    <video src="~/video/service.mp4" class="w-100" muted loop autoplay type="video/mp4"></video>
+                </div>
+                <div class="video-heading my-4">
+                    <h1 class="size-h1 text-white fw-bold mb-4">@ViewData["Title"]</h1>
+                    <p class="text-white size-paragraph m-0">Lorem Ipsum dummy text.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/service background video-->
+<!--service we provide-->
+<section id="services">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-xs-12">
+                <h5 class="mb-4 text-center text-primary font-monospace mt-0">AREAS WHAT WE SERV</h5>
+                <h2 class="text-center m-0 mb-4">
+                    We Provide Awesome Services
+                </h2>
+                <p class="text-muted text-style mb-4">
+                    Got a project in mind? We’d love to hear about it. Take five minutes to
+                    fill out our project form so that we can get to know you and understand your project.
+                </p>
+            </div>
+            <div class="col-md-6 col-xs-12 col-lg-4 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-desktop text-white bg-primary icon fa-2x mb-4"></i>
+                        <h5 class="mb-4">GRAPHIC DESIGN</h5>
+                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis lectus tortorism.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xs-12 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-code fa-2x text-white bg-primary icon mb-4"></i>
+                        <h5 class="mb-4">WEB DEVELOPMENT</h5>
+                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis lectus tortorism.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xs-12 mb-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fa fa-cubes fa-2x text-white bg-primary icon mb-4"></i>
+                        <h5 class="text-center mb-4">PRODUCT DESIGN</h5>
+                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis lectus tortorism.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xs-12 mb-4 mb-lg-0">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div><i class="far fa-edit fa-2x text-white bg-primary icon mb-4"></i></div>
+                        <h5 class="mb-4">BLOG WRITING</h5>
+                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis lectus tortorism.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xs-12 mb-4 mb-md-0">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div><i class="fas fa-chart-pie fa-2x text-white bg-primary icon mb-4"></i></div>
+                        <h5 class="mb-4">SOCIAL MARKETING</h5>
+                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis lectus tortorism.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xs-12">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <div><i class="fas fa-mobile-alt text-white bg-primary icon fa-2x mb-4"></i></div>
+                        <h5 class="mb-4">ANDROID APPLICATION</h5>
+                        <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis lectus tortorism.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--/service we provide-->
+<!-- more detail-->
+<section id="more-service">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <img src="~/img/service-about.jpg" class="img-fluid mb-4 mb-md-0" alt="loading" />
+                </div>
+            <div class="col-md-6 col-xs-12">
+                <h2 class="text-center mb-4">
+                    Preparing For Your Success
+                    Provide Best <span class="text-primary">Services.</span>
+                </h2>
+                <div class="border-start">
+                    <p class="mb-4 text-muted text-style ms-3">
+                        The standard chunk of Lorem Ipsum used since the 1500s is and reproduced below for those interested.
+                        Sections 1.10.32 and also 1.10.33 from “de Finibus Bonorum et Malorum" by Cicero
+                        are alse reproduced in their exact original form, accompanied
+                    </p>
+                    <p class="ms-3 text-muted text-style mb-4">
+                        The standard chunk of Lorem Ipsum used since the 1500s is and reproduced below
+                        for those interested
+                    </p>
+                </div>
+                <a asp-page="./Contactus"><button class="btn bg-primary text-white px-3 rounded-0 text-capitalize shadow-sm btn-style">More Details <i class="fas fa-long-arrow-alt-right ms-1"></i></button></a>
+            </div>
+                </div>
+        </div>
+</section>
+<!-- /more detail-->

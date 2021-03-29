@@ -108,12 +108,12 @@ input:focus {
     border-radius: 50%;
 }
 
-    #register .social-icon:hover {
+#register .social-icon:hover {
         transform: rotate(360deg);
         box-shadow: 0 0 0 3px #2874ba;
         background: white;
         color: #307fc1 !important;
-    }
+}
 
 /*==========index Page============*/
 #blog-cards .card .card-detail {
@@ -234,6 +234,8 @@ input:focus {
 
 #contact .card:hover {
     box-shadow: 0 4px 20px rgb(0 0 0 / 16%);
+    transform: translateY(-5px);
+    transition: all 0.4s ease;
 }
 
 #contact a:hover {
@@ -296,6 +298,54 @@ input:focus {
     margin:0;
     text-align:justify;
 }
+
+/*========== service page ============*/
+#service-video video {
+    height: 100vh;
+    object-fit: cover;
+}
+
+#service-video .video-shade::after {
+    background-color: #000;
+    content: "";
+    opacity: 0.7;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#service-video .video-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+
+#services .card:hover {
+    box-shadow: 0 4px 20px rgb(0 0 0 / 16%);
+    transform: translateY(-5px);
+    transition: all 0.4s ease;
+}
+
+#services .icon {
+    font-size: 36px;
+    height: 75px;
+    width: 75px;
+    line-height: 75px;
+    border-radius: 100px 100px 100px 100px;
+}
+
+#services .card:hover i {
+    background: rgba(12, 90, 219, 0.18) !important;
+    color: #307fc1 !important;
+    transform: rotate(360deg);
+    transition-duration: 1s;
+}
 /*========== footer ============*/
 #footer .social-icon {
     height: 33px;
@@ -330,7 +380,7 @@ input:focus {
             font-weight: 800;
         }
 
-        #video-wraper video, #contact-wraper video, #post-video video{
+        #video-wraper video, #contact-wraper video, #post-video video, #service-video video{
             object-fit: cover;
             height: 50vh;
         }
@@ -352,12 +402,20 @@ input:focus {
     }
     /*media query for ipad and ipad pro*/
     @media screen and (min-width:768px) and (max-width:1199px) {
-        #video-wraper video, #contact-wraper video, #post-video video {
+        #video-wraper video, #contact-wraper video, #post-video video, #service-video video {
             height: 50vh;
             object-fit: cover;
         }
       .img-responsive{
             height:660px;
             object-fit:cover;
+        }
+        #more-service img {
+            height: 520px;
+            object-fit: fill;
+        }
+        #nav-bar .nav-link {
+            padding-right: .2rem;
+            padding-left: .1rem;
         }
     }
